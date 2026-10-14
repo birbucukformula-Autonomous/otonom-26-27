@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# YOLO & Machine Learning Artifacts
+*.pt
+yolo_runs/
+runs/
+*.onnx
+
+# ROS 2 & Build artifacts
+build/
+install/
+log/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
