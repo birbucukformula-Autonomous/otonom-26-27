@@ -37,7 +37,7 @@ Görevi tamamlarken aşağıdaki konuları araştırmanız ve uygulamanız bekle
 ### Teslimat Formatı & Dizin Yapısı
 Çalışmanızı sadece şu dizine ekleyiniz:
 ```text
-tasks/task-03-perception-yolo-training/submissions/<ad_soyad>/
+training-program/task-03-perception-yolo-training/submissions/<ad_soyad>/
 ├── results.png
 ├── test_detection.jpg
 ├── data.yaml
@@ -51,7 +51,7 @@ tasks/task-03-perception-yolo-training/submissions/<ad_soyad>/
    ```
 2. Dosyalarınızı kendi klasörünüze ekleyip commit atın:
    ```bash
-   git add tasks/task-03-perception-yolo-training/submissions/<ad_soyad>/
+   git add training-program/task-03-perception-yolo-training/submissions/<ad_soyad>/
    git commit -m "feat(task-03): <Ad Soyad> YOLO model eğitimi teslimi"
    ```
 3. Dalınızı uzak sunucuya gönderip GitHub üzerinden `main` dalına Pull Request (PR) açın.

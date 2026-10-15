@@ -36,7 +36,7 @@ Görevi tamamlayabilmek için aşağıdaki konuları araştırmanız ve uygulama
 ### Teslimat Formatı & Dizin Yapısı
 Çalışmanızı sadece şu dizine ekleyiniz:
 ```text
-tasks/task-02-ros2-communication-basics/submissions/<ad_soyad>/
+training-program/task-02-ros2-communication-basics/submissions/<ad_soyad>/
 ├── motion_controller.py
 ├── screenshot.png
 ├── rqt_graph.png
@@ -50,7 +50,7 @@ tasks/task-02-ros2-communication-basics/submissions/<ad_soyad>/
    ```
 2. Dosyalarınızı kendi klasörünüze ekleyip commit atın:
    ```bash
-   git add tasks/task-02-ros2-communication-basics/submissions/<ad_soyad>/
+   git add training-program/task-02-ros2-communication-basics/submissions/<ad_soyad>/
    git commit -m "feat(task-02): <Ad Soyad> ROS 2 simülasyon teslimi"
    ```
 3. Dalınızı uzak sunucuya gönderip GitHub üzerinden `main` dalına Pull Request (PR) açın.

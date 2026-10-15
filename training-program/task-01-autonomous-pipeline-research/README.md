@@ -43,7 +43,7 @@ Aşağıdaki 4 temel disiplinden ilgi duyduğunuz **biri** üzerine derinlemesin
 ### Teslimat Formatı & Dizin Yapısı
 Çalışmanızı sadece şu dizine ekleyiniz:
 ```text
-tasks/task-01-autonomous-pipeline-research/submissions/<ad_soyad>/
+training-program/task-01-autonomous-pipeline-research/submissions/<ad_soyad>/
 ├── sunum.pdf
 └── ozet.md
 ```
@@ -55,7 +55,7 @@ tasks/task-01-autonomous-pipeline-research/submissions/<ad_soyad>/
    ```
 2. Dosyalarınızı kendi klasörünüze ekleyip commit atın:
    ```bash
-   git add tasks/task-01-autonomous-pipeline-research/submissions/<ad_soyad>/
+   git add training-program/task-01-autonomous-pipeline-research/submissions/<ad_soyad>/
    git commit -m "feat(task-01): <Ad Soyad> araştırma teslimi"
    ```
 3. Dalınızı uzak sunucuya gönderip GitHub üzerinden `main` dalına Pull Request (PR) açın.

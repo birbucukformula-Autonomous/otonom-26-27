@@ -38,7 +38,7 @@ Görevi tamamlarken aşağıdaki konuları araştırmanız ve uygulamanız bekle
 ### Teslimat Formatı & Dizin Yapısı
 Çalışmanızı sadece şu dizine ekleyiniz:
 ```text
-tasks/task-04-path-planning-and-motion/submissions/<ad_soyad>/
+training-program/task-04-path-planning-and-motion/submissions/<ad_soyad>/
 ├── path_follower.py
 ├── trajectory_plot.png
 ├── error_plot.png
@@ -52,7 +52,7 @@ tasks/task-04-path-planning-and-motion/submissions/<ad_soyad>/
    ```
 2. Dosyalarınızı kendi klasörünüze ekleyip commit atın:
    ```bash
-   git add tasks/task-04-path-planning-and-motion/submissions/<ad_soyad>/
+   git add training-program/task-04-path-planning-and-motion/submissions/<ad_soyad>/
    git commit -m "feat(task-04): <Ad Soyad> yol takibi simülasyon teslimi"
    ```
 3. Dalınızı uzak sunucuya gönderip GitHub üzerinden `main` dalına Pull Request (PR) açın.
