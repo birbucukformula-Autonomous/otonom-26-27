@@ -1,0 +1,10 @@
+path: ../dataset
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: fuze
+  1: helikopter
+  2: f16
+  3: drone

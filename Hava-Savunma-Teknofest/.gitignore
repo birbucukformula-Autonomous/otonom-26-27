@@ -1,0 +1,24 @@
+# Veri setleri ve medya dosyaları (klasör yapısını korumak için .gitkeep hariç)
+02_veri_toplama/raw/*
+!02_veri_toplama/raw/.gitkeep
+02_veri_toplama/synthetic/*
+!02_veri_toplama/synthetic/.gitkeep
+02_veri_toplama/dataset/**/images/*
+!02_veri_toplama/dataset/**/images/.gitkeep
+02_veri_toplama/dataset/**/labels/*
+!02_veri_toplama/dataset/**/labels/.gitkeep
+
+# Ağırlık ve export dosyaları
+03_yapay_zeka_egitimi/weights/*
+!03_yapay_zeka_egitimi/weights/.gitkeep
+*.engine
+
+# Test videoları ve video çıktıları
+04_video_test/test_videos/*
+!04_video_test/test_videos/.gitkeep
+04_video_test/outputs/*
+!04_video_test/outputs/.gitkeep
+*.mp4
+*.avi
+*.mov
+*.mkv
