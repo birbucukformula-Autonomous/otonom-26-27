@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <model name="helikopter">
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://helikopter/meshes/helikopter.stl</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.2 0.32 0.18 1</ambient>
+          <diffuse>0.28 0.45 0.24 1</diffuse>
+          <specular>0.25 0.25 0.25 1</specular>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.40 0.60 0.18</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

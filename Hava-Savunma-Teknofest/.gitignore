@@ -22,3 +22,6 @@
 *.avi
 *.mov
 *.mkv
+
+# Gazebo donusturulmus buyuk mesh dosyalari
+gazebo_sim/models/*/meshes/*.stl

@@ -4,9 +4,29 @@ from collections import Counter
 from pathlib import Path
 import argparse
 import cv2
+import numpy as np
 from ultralytics import YOLO
 
 VIDEO_EXTS = {".mp4", ".avi", ".mov", ".mkv"}
+
+
+def classify_balloon_color(frame: np.ndarray, xyxy: tuple[int, int, int, int]) -> str:
+    """Balon kutusunun merkez bolgesinden HSV ile kirmizi/mavi renk ayrımı yapar."""
+    x1, y1, x2, y2 = xyxy
+    dx, dy = max(1, (x2 - x1) // 4), max(1, (y2 - y1) // 4)
+    roi = frame[max(0, y1 + dy):max(1, y2 - dy), max(0, x1 + dx):max(1, x2 - dx)]
+    if roi.size == 0:
+        return "belirsiz"
+
+    hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+    red_low = cv2.inRange(hsv, (0, 70, 50), (10, 255, 255))
+    red_high = cv2.inRange(hsv, (170, 70, 50), (180, 255, 255))
+    red_ratio = np.count_nonzero(red_low | red_high) / (roi.shape[0] * roi.shape[1])
+    blue_ratio = np.count_nonzero(cv2.inRange(hsv, (95, 70, 50), (135, 255, 255))) / (roi.shape[0] * roi.shape[1])
+
+    if max(red_ratio, blue_ratio) < 0.15:
+        return "belirsiz"
+    return "DUSMAN(kirmizi)" if red_ratio >= blue_ratio else "DOST(mavi)"
 
 
 def run_on_video(model: YOLO, video_path: Path, output_dir: Path, conf: float, imgsz: int) -> None:
@@ -35,12 +55,20 @@ def run_on_video(model: YOLO, video_path: Path, output_dir: Path, conf: float, i
 
         results = model.predict(frame, conf=conf, imgsz=imgsz, verbose=False)
         result = results[0]
+        annotated = result.plot()
         if len(result.boxes) > 0:
             frames_with_detection += 1
-            for cls_tensor in result.boxes.cls:
-                class_hits[model.names[int(cls_tensor)]] += 1
+            for box in result.boxes:
+                cls_name = model.names[int(box.cls[0])]
+                if cls_name == "balon":
+                    x1, y1, x2, y2 = (int(v) for v in box.xyxy[0].tolist())
+                    iff_tag = classify_balloon_color(frame, (x1, y1, x2, y2))
+                    class_hits[f"balon:{iff_tag}"] += 1
+                    cv2.putText(annotated, iff_tag, (x1, min(height - 5, y2 + 18)), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 2)
+                else:
+                    class_hits[cls_name] += 1
 
-        writer.write(result.plot())
+        writer.write(annotated)
 
     cap.release()
     writer.release()

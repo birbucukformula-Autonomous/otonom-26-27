@@ -15,3 +15,4 @@ Bu klasör, yarışma kuralları ve tespit edilecek hedef objelerle ilgili tüm 
 | `1` | `helikopter` | | |
 | `2` | `f16` | | |
 | `3` | `drone` | | |
+| `4` | `balon` | Renk/IFF ayrımı tespit sonrası OpenCV HSV ile yapılır | |
